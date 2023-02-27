@@ -6,55 +6,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
     <link rel="stylesheet" href="style.css">
-    <script src="app.js"></script>
 </head>
 <body>
     <main>
         <div class="container">
 
             <div class="tela">
-                <input type="text" id="input">
+                <section id="input"></section>
             </div>
 
             <div class="btns">
 
                 <div class="linha">
-                    <span onclick="clear()">C</span>
-                    <span>()</span>
-                    <span>%</span>
-                    <span>/</span>
+                    <span onclick="clean()">C</span>
+                    <span onclick="back()"><</span>
+                    <span onclick="insert('%')">%</span>
+                    <span onclick="insert('/')">/</span>
                 </div>
 
                 <div class="linha">
                     <span onclick="insert('7')">7</span>
                     <span onclick="insert('8')">8</span>
                     <span onclick="insert('9')">9</span>
-                    <span>X</span>
+                    <span onclick="insert('*')">X</span>
                 </div>
 
                 <div class="linha">
                     <span onclick="insert('4')">4</span>
                     <span onclick="insert('5')">5</span>
                     <span onclick="insert('6')">6</span>
-                    <span>-</span>
+                    <span onclick="insert('-')">-</span>
                 </div>
 
                 <div class="linha">
                     <span onclick="insert('1')">1</span>
                     <span onclick="insert('2')">2</span>
                     <span onclick="insert('3')">3</span>
-                    <span>+</span>
+                    <span onclick="insert('+')">+</span>
                 </div>
 
                 <div class="linha">
                     <span>cor</span>
                     <span onclick="insert('0')">0</span>
-                    <span>,</span>
-                    <span>=</span>
+                    <span onclick="insert('.')">.</span>
+                    <span onclick="calcular()">=</span>
                 </div>
 
             </div>
         </div>
     </main>
 </body>
+<script>
+    function insert(num){
+        console.log(num);
+        document.getElementById("input").innerHTML = document.getElementById("input").innerHTML + num;
+    }
+    
+    function clean(){
+        console.log('limpar');
+        document.getElementById("input").innerHTML = ""
+    }
+
+    function back(){
+        let res = document.getElementById("input").innerHTML;
+        document.getElementById("input").innerHTML = res.substring(0, res.length -1)
+    }
+
+    function calcular(){
+        let res = document.getElementById("input").innerHTML;
+        if (res){
+           document.getElementById("input").innerHTML = eval(res)
+        }
+    }
+</script>
 </html>
