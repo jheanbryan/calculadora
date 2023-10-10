@@ -1,38 +1,37 @@
 *{
     padding: 0px;
     margin: 0px;
+    box-sizing: border-box;
 }
 body{
-    background-color: gray;
-    width: 100%;
+    background-color: rebeccapurple;
+    height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
 }
 .container{
     display: flex;
     flex-direction: column;
-    width:20%;
     padding: 5px;
-    margin: auto;
-    background-color: #2E2E2E;
-    margin-top: 25px;
+    margin: 40px auto 0 auto;
+    background-color: rgba(0, 0, 0, 0.684);
     border-radius: 15px;
-}
-.tela{
-    padding: 20px;
+    max-width: 400px;
 }
 #input{
-    width: 90%;
+    width: 100%;
     font-size: 3em;
     border: 5px solid black;
-    border-radius: 20px;
+    border-radius: 5px;
     background-color: antiquewhite;
-    text-align: right;
-    padding: 10px;
     margin: auto;
-    height: 1em ;
+    height: 1.5em;
+    padding-right: 2px;
+    display: flex;
+    justify-content: flex-end;
 }
 .btns{
-    margin-inline: auto;
+    height: 100%;
 }
 .linha{
     display: flex;
@@ -41,15 +40,14 @@ span{
     display: flex;
     justify-content: center;
     align-items: center;
-    width:100px;
-    height: 100px;
+    padding: 20px;
     cursor: pointer;
     border: 3px solid black;
     font-size: 26px;
-    background-color: gray;
+    background-color: rgb(39, 39, 39);
     color: antiquewhite;
-    border-radius: 10px;
     margin: 2px;
+    width: 100%;
 }
 span:hover{
     transform: scale(1.1);
