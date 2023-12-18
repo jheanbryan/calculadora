@@ -56,6 +56,9 @@ function checkAndAddKey(key) {
     } else if (key == '=') {
         calc();
 
+    } else if(key == 'X'){
+        insert('*');
+
     } else {
         insert(key);
     };
