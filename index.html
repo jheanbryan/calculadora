@@ -8,75 +8,50 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
-        <div class="container">
+    <main class="container">
+        <div class="tela">
+            <section id="input"></section>
+        </div>
 
-            <div class="tela">
-                <section id="input"></section>
+        <div class="btns">
+
+            <div class="linha">
+                <span class="key">C</span>
+                <span class="key"><</span>
+                <span class="key">%</span>
+                <span class="key">/</span>
             </div>
 
-            <div class="btns">
-
-                <div class="linha">
-                    <span onclick="clean()">C</span>
-                    <span onclick="back()"><</span>
-                    <span onclick="insert('%')">%</span>
-                    <span onclick="insert('/')">/</span>
-                </div>
-
-                <div class="linha">
-                    <span onclick="insert('7')">7</span>
-                    <span onclick="insert('8')">8</span>
-                    <span onclick="insert('9')">9</span>
-                    <span onclick="insert('*')">X</span>
-                </div>
-
-                <div class="linha">
-                    <span onclick="insert('4')">4</span>
-                    <span onclick="insert('5')">5</span>
-                    <span onclick="insert('6')">6</span>
-                    <span onclick="insert('-')">-</span>
-                </div>
-
-                <div class="linha">
-                    <span onclick="insert('1')">1</span>
-                    <span onclick="insert('2')">2</span>
-                    <span onclick="insert('3')">3</span>
-                    <span onclick="insert('+')">+</span>
-                </div>
-
-                <div class="linha">
-                    <span>cor</span>
-                    <span onclick="insert('0')">0</span>
-                    <span onclick="insert('.')">.</span>
-                    <span onclick="calcular()">=</span>
-                </div>
-
+            <div class="linha">
+                <span class="key">7</span>
+                <span class="key">8</span>
+                <span class="key">9</span>
+                <span class="key">X</span>
             </div>
+
+            <div class="linha">
+                <span class="key">4</span>
+                <span class="key">5</span>
+                <span class="key">6</span>
+                <span class="key">-</span>
+            </div>
+
+            <div class="linha">
+                <span class="key">1</span>
+                <span class="key">2</span>
+                <span class="key">3</span>
+                <span class="key">+</span>
+            </div>
+
+            <div class="linha">
+                <span></span>
+                <span class="key">0</span>
+                <span class="key">.</span>
+                <span class="key">=</span>
+            </div>
+
         </div>
     </main>
+    <script src="app.js"></script>
 </body>
-<script>
-    function insert(num){
-        console.log(num);
-        document.getElementById("input").innerHTML = document.getElementById("input").innerHTML + num;
-    }
-    
-    function clean(){
-        console.log('limpar');
-        document.getElementById("input").innerHTML = ""
-    }
-
-    function back(){
-        let res = document.getElementById("input").innerHTML;
-        document.getElementById("input").innerHTML = res.substring(0, res.length -1)
-    }
-
-    function calcular(){
-        let res = document.getElementById("input").innerHTML;
-        if (res){
-           document.getElementById("input").innerHTML = eval(res)
-        }
-    }
-</script>
 </html>
